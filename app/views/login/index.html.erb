@@ -1,0 +1,27 @@
+<%if current_user.present? %>
+			<%#= current_user.email %><br>
+	<%= link_to "Logout", destroy_user_session_path, method: :delete, :class =>"btn btn-dark" %>
+	<br/>
+	<br/>
+	<%= form_for :videos, url: "videos", method: :get do |form| %>
+		<select name="standard">
+			<option value="1">class 1</option>
+			<option value="2">class 2</option>
+			<option value="3">class 3</option>
+			<option value="4">class 4</option>
+			<option value="5">class 5</option>
+			<option value="6">class 6</option>
+			<option value="7">class 7</option>
+			<option value="8">class 8</option>
+			<option value="9">class 9</option>
+			<option value="10">class 10</option>
+			<option value="11">class 11</option>
+			<option value="12">class 12</option>
+		</select>
+		<%= form.submit  %>
+	<% end  %>
+
+<%else%>
+	<%= link_to "Login", new_user_session_path, :class =>"btn btn-dark"  %>
+	<span> <%= link_to "Sign up", new_user_registration_path, :class =>"btn btn-dark"  %></span>
+<%end%>
