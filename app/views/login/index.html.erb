@@ -3,8 +3,14 @@
 	<%= link_to "Logout", destroy_user_session_path, method: :delete, :class =>"btn btn-dark" %>
 	<br/>
 	<br/>
-	<%= form_for :videos, url: "videos", method: :get do |form| %>
-		<select name="standard">
+	
+
+
+
+
+<form action="/videos" method=GET>
+	<select name="standard">
+			<option value="">Select Your Class</option>
 			<option value="1">class 1</option>
 			<option value="2">class 2</option>
 			<option value="3">class 3</option>
@@ -18,8 +24,15 @@
 			<option value="11">class 11</option>
 			<option value="12">class 12</option>
 		</select>
-		<%= form.submit  %>
-	<% end  %>
+		<input type="submit" name="" value="Select">
+</form>
+
+
+
+
+
+
+
 
 <%else%>
 	<%= link_to "Login", new_user_session_path, :class =>"btn btn-dark"  %>

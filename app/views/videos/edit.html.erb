@@ -1,0 +1,32 @@
+<h1>edit video</h1>
+
+
+<div class="post-form">
+	<%= form_for(@video, url: video_path, method: :patch ) do |form| %>
+	<%#= form_with scope: :article, local: true do |form| %>
+
+	<p>
+	    <%= form.label :standard %><br>
+	    <%= form.text_field :standard %>
+	</p>
+
+	<p>
+	    <%= form.label :title %><br>
+	    <%= form.text_field :title %>
+	</p>
+	<%= form.hidden_field :id, :value => @video.id %>
+	<p>
+	    <%= form.label :description %><br>
+	    <%= form.text_area :description %>
+	</p>
+
+	<p>
+	    <%= form.label :link %><br>
+	    <%= form.text_area :link %>
+	</p>
+
+	<p>
+	    <%= form.submit %>
+	</p>
+	<% end %>
+</div>

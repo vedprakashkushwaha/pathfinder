@@ -1,0 +1,26 @@
+<h1>All Videos</h1>
+
+  <table>
+  <tr>
+    <th>standard</th>
+    <th>Text</th>
+    <th>Description</th>
+    <th>link</th>
+   
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @videos.each do |video| %>
+    <tr>
+      <td><%= video.standard %></td>
+      <td><%= video.title %></td>
+      <td><%= video.description %></td>
+      <td><%= video.link %></td>
+      <td><%= link_to 'Show', videos_showSpecific_path(video) %></td>
+      <td><%= link_to 'Edit', edit_video_path(video) %></td>
+      <td><%= link_to 'Destroy', video_path(video),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

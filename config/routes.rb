@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   
   devise_for :users
- 
+  get 'videos/showSpecific'
+ get 'videos/showAll'
   root 'login#index'
   resources :videos
   resources :admin
+
   #root 'login#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

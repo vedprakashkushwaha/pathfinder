@@ -9,39 +9,42 @@ class VideosController < ApplicationController
 	end 
 
 	def show
-		  render plain: "show"
+		@video = Video.all
+	end
+
+	def showAll
+		@videos = Video.all
 	end
 
 
 	def create
-		# @newVido = Video.new(params[:video])
-		# #redirect_to admin_index_path
-		@video = Video.new()
-		@video.title=params[:video][:title]
-		@video.link=params[:video][:link]
-		@video.standard=params[:video][:standard]
-		@video.description=params[:video][:description]
-		@video.save
+		@newVideo = Video.create(video_params)
 		redirect_to admin_index_path
 	end
 
 
 	def destroy
-		  render plain: "delete"
+		@video = Video.find_by(id: params[:id])
+		@video.destroy
+		redirect_to videos_showAll_path
 	end
 
 
 	def edit
-		  render plain: "edit"
+		@video = Video.find_by(id: params[:id])
 	end
-
 
 
 	def update
-		  render plain: "update"
+		@video = Video.find_by(id: params[:video][:id])
+		@video.update(video_params)
+		redirect_to videos_showAll_path
 	end
 
 
-
+	private
+        def video_params
+            params.require(:video).permit(:title, :description, :link, :standard)
+		end
 
 end
