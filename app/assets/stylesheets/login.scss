@@ -1,3 +1,26 @@
 // Place all the styles related to the login controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.input-style{
+	    width: 75%;
+	    border: 1px solid #cac2c2;
+	    border-radius: 11px;
+	    height: 40px;
+	    padding-left: 10px;
+	    outline: none;
+
+}
+.card{
+	border-radius: 22px;
+	box-shadow: 0px 0px 10px -1px;
+    border: none;
+}
+.btn-all{
+	line-height: 3!important;
+    border-radius: 26px!important;
+    border: none!important;
+}
+.w-33{
+	    width: 33%;
+}
