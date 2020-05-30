@@ -108,17 +108,16 @@
             <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
             <%= f.password_field :current_password, autocomplete: "current-password",:class =>"input-style" %>
           </div>
-
-          <div class="actions">
-            <%= f.submit "Update", :class => "btn btn-outline-primary mr-2 "%>
+         <div class="d-flex align-item-center justify-content-center pt-2">
+           <div class="actions">
+            <%= f.submit "Update", :class => "btn-all main_btn mr-2  "%>
           </div>
         <% end %>
-
-        <h3>Cancel my account</h3>
-
-        <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-        <%= link_to "Back", :back %>
+         <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" },:class => "btn btn-outline-danger mr-2 ", method: :delete %>
+          <%= link_to "Back", :back, :class=>"btn btn-outline-info " %>
+         </div>
+          
+        
       </div>
       
 
@@ -139,5 +138,31 @@
   -webkit-background-clip: text;
   background-clip: text;
 }
-  
+  .main_btn {
+    padding: 0px 45px;
+    background-image: -webkit-gradient(linear, left top, right top, from(#bc2bff), color-stop(51%, #7249fb), to(#bc2bff));
+    background-image: -webkit-linear-gradient(left, #bc2bff 0%, #7249fb 51%, #bc2bff 100%);
+    background-image: -o-linear-gradient(left, #bc2bff 0%, #7249fb 51%, #bc2bff 100%);
+    background-image: linear-gradient(to right, #bc2bff 0%, #7249fb 51%, #bc2bff 100%);
+    background-size: 200% auto;
+    z-index: 2;
+    display: inline-block;
+    -webkit-transition: all 400ms linear;
+    -o-transition: all 400ms linear;
+    transition: all 400ms linear;
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
+    line-height: 50px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 10px 30px 0px rgba(115, 73, 251, 0.3);
+    box-shadow: 0px 10px 30px 0px rgba(115, 73, 251, 0.3);
+}
+.btn-all {
+    line-height: 3 !important;
+    border-radius: 26px !important;
+    border: none !important;
+}
 </style>
