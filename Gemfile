@@ -2,8 +2,7 @@ source 'https://rubygems.org'
 
 gem 'pry', '~> 0.12.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.7.1'
-# Use sqlite3 as the database for Active Record
+gem 'rails', '4.2.8'# Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'mysql2', '~> 0.3.18'
 gem 'devise', '~> 4.7', '>= 4.7.1'
@@ -33,7 +32,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

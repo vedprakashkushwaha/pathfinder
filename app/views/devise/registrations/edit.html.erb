@@ -1,43 +1,143 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>BulkApp</title>
+  </head>
+  <body data-spy="scroll" data-target="#mainNav" data-offset="70">
+    <section>
+      <header class="header_area navbar_fixed">
+        <div class="main_menu" id="mainNav">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <a class="navbar-brand logo_h text-white" href="index.html">Pathfinder.com</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                <ul class="nav navbar-nav menu_nav ml-auto">
+                  <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li> 
+                  <%if current_user.present? %>
+                    <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class =>"nav-link" %> </li>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+                  <%else%>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+                    <li class="nav-item">
+                      <%= link_to "Login", new_user_session_path, :class =>"nav-link"  %>
+                    </li>
+                    <li class="nav-item">
+                      <%= link_to "Sign up", new_user_registration_path, :class =>"nav-link"  %>
+                    </li>
+                  <% end  %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+                  <li class="nav-item"><a class="nav-link" href="#video">VIDEO</a>
+                    <li class="nav-item"><a class="nav-link" href="#price">PRICING</a>
+                      <li class="nav-item submenu dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
+                        </ul>
+                      </li> 
+                      <li class="nav-item submenu dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                          <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+                        </ul>
+                        
+                      </li>
+                    </li>
+                  </li>
+                </ul>
+              </div> 
+            </div>
+          </nav> 
+        </div>
+      </header>
+    </section>
+    <section>
+      <div class="text-center m-100">
+        <h2 class="rainbow">Edit <%= resource_name.to_s.humanize %></h2>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          
+          <div class="field">
+            <%= f.label :name %><br />
+            <%= f.text_field :name, autofocus: true, :class =>"input-style" %>
+          </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
+          <div class="field">
+            <%= f.label :phone_number %><br />
+            <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number"  , :class =>"input-style"%>
+          </div>
 
-<h3>Cancel my account</h3>
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" ,:class =>"input-style"%>
+          </div>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
 
-<%= link_to "Back", :back %>
+          <div class="field">
+            <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+            <%= f.password_field :password, autocomplete: "new-password", :class =>"input-style"%>
+            <% if @minimum_password_length %>
+              <br />
+              <em><%= @minimum_password_length %> characters minimum</em>
+            <% end %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password",:class =>"input-style" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+            <%= f.password_field :current_password, autocomplete: "current-password",:class =>"input-style" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Update", :class => "btn btn-outline-primary mr-2 "%>
+          </div>
+        <% end %>
+
+        <h3>Cancel my account</h3>
+
+        <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+        <%= link_to "Back", :back %>
+      </div>
+      
+
+    </section>
+  </body>
+</html>
+<style type="text/css">
+  .m-100{
+    margin-top: 110px;
+  }
+  .input-style{
+    width: 50% !important;
+  }
+  .rainbow {
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+  
+</style>
