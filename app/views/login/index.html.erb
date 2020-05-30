@@ -1,174 +1,167 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="icon" href="img/favicon.png" type="image/png">
-        <title>BulkApp</title>
-    </head>
-    <body data-spy="scroll" data-target="#mainNav" data-offset="70">
-        
-        <!--================Header Menu Area =================-->
-        <header class="header_area navbar_fixed">
-            <div class="main_menu" id="mainNav">
-            	<nav class="navbar navbar-expand-lg navbar-light">
-					<div class="container">
-						<!-- Brand and toggle get grouped for better mobile display -->
-						<a class="navbar-brand logo_h text-white" href="index.html">Pathfinder.com</a>
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-							<ul class="nav navbar-nav menu_nav ml-auto">
-								<li class="nav-item active"><a class="nav-link" href="#home">Home</a></li> 
-								<%if current_user.present? %>
-                                         <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class =>"nav-link" %> </li>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <title>BulkApp</title>
+</head>
+<body data-spy="scroll" data-target="#mainNav" data-offset="70">
 
-                                         <%else%>
-
-                                         <li class="nav-item">
-                                         	<%= link_to "Login", new_user_session_path, :class =>"nav-link"  %>
-                                         </li>
-                                         <li class="nav-item">
-                                         	<%= link_to "Sign up", new_user_registration_path, :class =>"nav-link"  %>
-                                         </li>
-                                           <% end  %>
-
-								<li class="nav-item"><a class="nav-link" href="#video">VIDEO</a>
-								<li class="nav-item"><a class="nav-link" href="#price">PRICING</a>
-								<li class="nav-item submenu dropdown">
-									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-									<ul class="dropdown-menu">
-										<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-									</ul>
-								</li> 
-								<li class="nav-item submenu dropdown">
-									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-									<ul class="dropdown-menu">
-										<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-										<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-									</ul>
-                                         
-								</li>
-							</ul>
-						</div> 
-					</div>
-            	</nav>
-            </div>
-        </header>
-        <!--================Header Menu Area =================-->
-        
-        <!--================Home Banner Area =================-->
-        <section class="home_banner_area" id="home">
-            <div class="banner_inner">
-				<div class="container">
-					<div class="row banner_content">
-						<div class="col-lg-9">
-							<h2>The Best institute<br />in  Kailashpuri</h2>
-							<p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women.</p>
-							<a class="banner_btn" href="#">Explore Now</a>
-						</div>
-						<div class="col-lg-3">
-							<div class="banner_map_img">
-								
-
-
-							</div>
-						</div>
-					</div>
-				</div>
-            </div>
-        </section>
-        <%if current_user.present? %>
-                 <form action="/videos" method=GET>
-                 <div class="dropdown" align="center">
-        <select name="standard" class="btn btn-secondary dropdown-toggle">
-            <option value="1">class 1</option>
-            <option value="2">class 2</option>
-            <option value="3">class 3</option>
-            <option value="4">class 4</option>
-            <option value="5">class 5</option>
-            <option value="6">class 6</option>
-            <option value="7">class 7</option>
-            <option value="8">class 8</option>
-            <option value="9">class 9</option>
-            <option value="10">class 10</option>
-            <option value="11">class 11</option>
-            <option value="12">class 12</option>
+  <!--================Header Menu Area =================-->
+  <header class="header_area navbar_fixed">
+    <div class="main_menu" id="mainNav">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <a class="navbar-brand logo_h text-white" href="index.html">Pathfinder.com</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav ml-auto">
+              <li class="nav-item">
+                <%if current_user.present? %>
+      <form action="/videos" method=GET>
+       <div class="nav-link" >
+        <select name="standard" class=" btn btn-primary btn-sm nav-link">
+          <option value="1">class 1</option>
+          <option value="2">class 2</option>
+          <option value="3">class 3</option>
+          <option value="4">class 4</option>
+          <option value="5">class 5</option>
+          <option value="6">class 6</option>
+          <option value="7">class 7</option>
+          <option value="8">class 8</option>
+          <option value="9">class 9</option>
+          <option value="10">class 10</option>
+          <option value="11">class 11</option>
+          <option value="12">class 12</option>
         </select>
-        <input type="submit" name="" value="Select">
-</form>
- <% end  %>
-    </div>
-        <!--================End Home Banner Area =================-->
-        
-        <!--================Feature Area =================-->
-       
-        <!--================End Latest News Area =================-->
-        
-        <!--================ start footer Area  =================-->	
-        <footer class="footer-area p_120">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3  col-md-6 col-sm-6">
-                        <div class="single-footer-widget tp_widgets">
-                           <h6 class="footer_title">Top Products</h6>
-                            <ul class="list">
-                            	<li><a href="#">Managed Website</a></li>
-                            	<li><a href="#">Manage Reputation</a></li>
-                            	<li><a href="#">Power Tools</a></li>
-                            	<li><a href="#">Marketing Service</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-md-6 col-sm-6">
-                        <div class="single-footer-widget news_widgets">
-                            <h6 class="footer_title">Newsletter</h6>
-                            <p>You can trust us. we only send promo offers, not a single spam.</p>		
-                            <div id="mc_embed_signup">
-                                <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
-                                    <div class="input-group d-flex flex-row">
-                                        <input name="EMAIL" placeholder="Your email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
-                                        <button class="btn sub-btn">Get Started</button>		
-                                    </div>									
-                                    <div class="mt-10 info"></div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6 offset-lg-1">
-                        <div class="single-footer-widget instafeed">
-                            <h6 class="footer_title">Instagram Feed</h6>
-                            <ul class="list instafeed d-flex flex-wrap">
-                                <li><img src="img/instagram/Image-01.jpg" alt=""></li>
-                                <li><img src="img/instagram/Image-02.jpg" alt=""></li>
-                                <li><img src="img/instagram/Image-03.jpg" alt=""></li>
-                                <li><img src="img/instagram/Image-04.jpg" alt=""></li>
-                                <li><img src="img/instagram/Image-05.jpg" alt=""></li>
-                                <li><img src="img/instagram/Image-06.jpg" alt=""></li>
-                                <li><img src="img/instagram/Image-07.jpg" alt=""></li>
-                                <li><img src="img/instagram/Image-08.jpg" alt=""></li>
-                            </ul>
-                        </div>
-                    </div>	
-                </div>
-                <div class="row footer-bottom d-flex justify-content-between align-items-center">
-                    <p class="col-lg-8 col-md-8 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                    <div class="col-lg-4 col-md-4 footer-social">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                        <a href="#"><i class="fa fa-dribbble"></i></a>
-                        <a href="#"><i class="fa fa-behance"></i></a>
-                    </div>
-                </div>
+        <input type="submit" name="" value="Select" class="btn btn-success btn-sm btn-pd">
+      </form>
+      <% end  %>
+              </li>
+              <li class="nav-item"><%= link_to "Home", new_user_session_path, :class =>"nav-link" %> </li>
+              <%if current_user.present? %>
+              <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class =>"nav-link" %> </li>
+
+              <%else%>
+
+              <li class="nav-item">
+                <%= link_to "Login", new_user_session_path, :class =>"nav-link"  %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Sign up", new_user_registration_path, :class =>"nav-link"  %>
+              </li>
+              <% end  %>
+                  <li class="nav-item submenu dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+                    <ul class="dropdown-menu">
+                      <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                      <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+                    </ul>
+
+                  </li>
+                </ul>
+              </div> 
             </div>
-        </footer>
-		<!--================ End footer Area  =================-->
-    </body>
-</html>
+          </nav>
+        </div>
+      </header>
+      <!--================Header Menu Area =================-->
+
+      <!--================Home Banner Area =================-->
+      <section class="home_banner_area" id="home">
+        <div class="banner_inner">
+          <div class="container">
+            <div class="row banner_content">
+              <div class="col-lg-9">
+                <h2>The Best institute<br />in  Kailashpuri</h2>
+                <p>inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women.</p>
+                <a class="banner_btn" href="#">Explore Now</a>
+              </div>
+              <div class="col-lg-3">
+                <div class="banner_map_img">
+
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!--================End Home Banner Area =================-->
+
+    <!--================Feature Area =================-->
+
+    <!--================End Latest News Area =================-->
+
+    <!--================ start footer Area  =================-->    
+    <footer class="footer-area p_120">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3  col-md-6 col-sm-6">
+            <div class="single-footer-widget tp_widgets">
+             <h6 class="footer_title">Top Products</h6>
+             <ul class="list">
+              <li><a href="#">Managed Website</a></li>
+              <li><a href="#">Manage Reputation</a></li>
+              <li><a href="#">Power Tools</a></li>
+              <li><a href="#">Marketing Service</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-6">
+          <div class="single-footer-widget news_widgets">
+            <h6 class="footer_title">Newsletter</h6>
+            <p>You can trust us. we only send promo offers, not a single spam.</p>      
+            <div id="mc_embed_signup">
+              <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
+                <div class="input-group d-flex flex-row">
+                  <input name="EMAIL" placeholder="Your email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
+                  <button class="btn sub-btn">Get Started</button>        
+                </div>                                  
+                <div class="mt-10 info"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6 offset-lg-1">
+          <div class="single-footer-widget instafeed">
+            <h6 class="footer_title">Instagram Feed</h6>
+            <ul class="list instafeed d-flex flex-wrap">
+              <li><img src="img/instagram/Image-01.jpg" alt=""></li>
+              <li><img src="img/instagram/Image-02.jpg" alt=""></li>
+              <li><img src="img/instagram/Image-03.jpg" alt=""></li>
+              <li><img src="img/instagram/Image-04.jpg" alt=""></li>
+              <li><img src="img/instagram/Image-05.jpg" alt=""></li>
+              <li><img src="img/instagram/Image-06.jpg" alt=""></li>
+              <li><img src="img/instagram/Image-07.jpg" alt=""></li>
+              <li><img src="img/instagram/Image-08.jpg" alt=""></li>
+            </ul>
+          </div>
+        </div>  
+      </div>
+      <div class="row footer-bottom d-flex justify-content-between align-items-center">
+        <p class="col-lg-8 col-md-8 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          <div class="col-lg-4 col-md-4 footer-social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-behance"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--================ End footer Area  =================-->
+  </body>
+  </html>

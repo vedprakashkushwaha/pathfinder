@@ -15,7 +15,7 @@ default: &default
   pool: 20
   reaping_frequency: 3
   username: root
-  password: W3villa! 
+  password: root 
 #  socket: /tmp/mysql.sock
   collation: utf8mb4_unicode_ci
 

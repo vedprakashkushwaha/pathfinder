@@ -25,9 +25,31 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
             <ul class="nav navbar-nav menu_nav ml-auto">
-              <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li> 
+              <li class="nav-item">
+                <%if current_user.present? %>
+      <form action="/videos" method=GET>
+       <div class="nav-link" >
+        <select name="standard" class=" btn btn-primary btn-sm nav-link">
+          <option value="1">class 1</option>
+          <option value="2">class 2</option>
+          <option value="3">class 3</option>
+          <option value="4">class 4</option>
+          <option value="5">class 5</option>
+          <option value="6">class 6</option>
+          <option value="7">class 7</option>
+          <option value="8">class 8</option>
+          <option value="9">class 9</option>
+          <option value="10">class 10</option>
+          <option value="11">class 11</option>
+          <option value="12">class 12</option>
+        </select>
+        <input type="submit" name="" value="Select" class="btn btn-success btn-sm btn-pd">
+      </form>
+      <% end  %>
+              </li>
+              <li class="nav-item active"><li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class =>"nav-link" %> </li></li> 
               <%if current_user.present? %>
-              <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class =>"nav-link" %> </li>
+              <li class="nav-item"><%= link_to "Home", new_user_session_path, :class =>"nav-link" %> </li>
 
               <%else%>
 
@@ -47,35 +69,18 @@
 </div>
 </header>
 <section>
-  <div class="mt-10">
-     <%if current_user.present? %>
-                 <form action="/videos" method=GET>
-                 <div class="dropdown" align="center">
-        <select name="standard" class="btn btn-secondary dropdown-toggle">
-            <option value="1">class 1</option>
-            <option value="2">class 2</option>
-            <option value="3">class 3</option>
-            <option value="4">class 4</option>
-            <option value="5">class 5</option>
-            <option value="6">class 6</option>
-            <option value="7">class 7</option>
-            <option value="8">class 8</option>
-            <option value="9">class 9</option>
-            <option value="10">class 10</option>
-            <option value="11">class 11</option>
-            <option value="12">class 12</option>
-        </select>
-        <input type="submit" name="" value="Select">
-</form>
- <% end  %> <br><br>
-   <div class="row">
-     <div class="col-md-12">
+  <div class="container">
+  <br><br><br>
+  <div class="row">
        <% @videos.each do |video| %>
-       <iframe width="400" height="200" src="<%= video.link %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-       <% end %>
-     </div>
-   </div>   
- </div>
+     <div class="col-md-4">
+      <div class="video-area">
+       <iframe width="300" height="200" src="<%= video.link %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       </div>
+   </div>  
+   <% end %>
+   </div>
+   </div>
 </section>
 </body>
 </html>

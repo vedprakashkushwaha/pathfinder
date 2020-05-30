@@ -280,6 +280,9 @@
 	.main_title h2 {
 		font-size: 25px;
 	}
+	.video-area{
+		padding-left: 12px;
+	}
 	/* Elements Area css
 	============================================================================================ */
 	.sample-text-area {
@@ -332,7 +335,7 @@
 		margin-bottom: 0px;
 	}
 	.single-footer-widget .sub-btn {
-		right: 0px;
+		right: 0px!important;
 	}
 	.video_area a img{
 		width: 40%;
