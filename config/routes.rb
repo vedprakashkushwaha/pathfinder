@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   
   devise_for :users
+  get 'admin/updateGrantVideoAccess'
+  get 'admin/grantVideoAccess'
   get 'videos/showSpecific'
- get 'videos/showAll'
+  get 'videos/showAll'
+  
   root 'login#index'
   resources :videos
   resources :admin
+ 
 
   #root 'login#index'
   # The priority is based upon order of creation: first created -> highest priority.
