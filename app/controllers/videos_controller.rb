@@ -1,7 +1,11 @@
 class VideosController < ApplicationController
 	def index
 		if current_user.present?
-			@videos = Video.where(standard:params["standard"])
+			if current_user.paid_videos_validity >= Date.today
+				@videos = Video.where(standard:params["standard"])
+			else
+				@videos = Video.where(standard:params["standard"],paid:false)
+			end
 		else
 			redirect_to new_user_session_path
 		end

@@ -16,8 +16,10 @@ class AdminController < ApplicationController
     def updateGrantVideoAccess
         if admin==true
             user =  User.find_by(email:params['email'])
-            user.paid_videos_validity = Date.today + 30
-            user.save  
+            if user.present?
+                user.paid_videos_validity = Date.today + 30
+                user.save  
+            end
             redirect_to admin_grantVideoAccess_path
 		else
 			redirect_to new_user_session_path

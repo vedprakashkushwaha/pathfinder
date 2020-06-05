@@ -5,9 +5,9 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
   def updateRoleId
-    binding.pry
     userRoleId=Role.find_by(name:"user")
     self.role_id=userRoleId.id
+    self.paid_videos_validity = Date.today - 1
     self.save
   end
   
