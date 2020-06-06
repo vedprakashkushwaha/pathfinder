@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>BulkApp</title>
+  </head>
+  <body data-spy="scroll" data-target="#mainNav" data-offset="70">
+      
+      <!--================Header Menu Area =================-->
+    <section>
+      <header class="header_area navbar_fixed">
+        <div class="main_menu" id="mainNav">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <a class="navbar-brand logo_h text-white" href="index.html">Pathfinder.com</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                <ul class="nav navbar-nav menu_nav ml-auto">
+                  <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li> 
+                  <%if current_user.present? %>
+                    <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class =>"nav-link" %> </li>
+
+                  <%else%>
+
+                    <li class="nav-item">
+                      <%= link_to "Login", new_user_session_path, :class =>"nav-link"  %>
+                    </li>
+                    <li class="nav-item">
+                      <%= link_to "Sign up", new_user_registration_path, :class =>"nav-link"  %>
+                    </li>
+                  <% end  %>
+
+                  <li class="nav-item">
+                <a href="https://pathfinderofficial.blogspot.com/" class="nav-link "  role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+              </li>
+              <li class="nav-item"><%= link_to "About Us", login_about_path, :class =>"nav-link" %> 
+              </li>
+                </ul>
+              </div> 
+            </div>
+          </nav> 
+        </div>
+      </header>
+    </section>
+
+    <section>
+      <div class="m-100 text-center">
+        <h1 class="rainbow">All Videos</h1>
+
+        <table class="table responsive">
+          <tr>
+            <th>Standard</th>
+            <th>Text</th>
+            <th>Description</th>
+            <th>Paid</th>
+            <th>Links</th>
+           
+            <th colspan="3"> Action</th>
+          </tr>
+         
+          <% @videos.each do |video| %>
+            <tr>
+              <td><%= video.standard %></td>
+              <td><%= video.title %></td>
+              <td><%= video.description %></td>
+              <td><%= video.paid %></td>
+              <td class="rainbow cursur"><%= video.link %></td>
+              <td><%= link_to 'Show', videos_showSpecific_path(video) %></td>
+              <td><%= link_to 'Edit', edit_video_path(video) %></td>
+              <td><%= link_to 'Destroy', video_path(video),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </section>
+  </body>
+</html>
+<style type="text/css">
+  .m-100{
+    margin-top: 110px;
+  }
+  .input-style{
+    width: 50% !important;
+  }
+  .rainbow {
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.cursur{
+  cursor: pointer;
+}
+  
+</style>

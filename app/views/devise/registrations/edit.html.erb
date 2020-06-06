@@ -1,0 +1,168 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <title>BulkApp</title>
+  </head>
+  <body data-spy="scroll" data-target="#mainNav" data-offset="70">
+    <section>
+      <header class="header_area navbar_fixed">
+        <div class="main_menu" id="mainNav">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <a class="navbar-brand logo_h text-white" href="index.html">Pathfinder.com</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                <ul class="nav navbar-nav menu_nav ml-auto">
+                  <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li> 
+                  <%if current_user.present? %>
+                    <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class =>"nav-link" %> </li>
+
+                  <%else%>
+
+                    <li class="nav-item">
+                      <%= link_to "Login", new_user_session_path, :class =>"nav-link"  %>
+                    </li>
+                    <li class="nav-item">
+                      <%= link_to "Sign up", new_user_registration_path, :class =>"nav-link"  %>
+                    </li>
+                  <% end  %>
+
+                  <li class="nav-item"><a class="nav-link" href="#video">VIDEO</a>
+                    <li class="nav-item"><a class="nav-link" href="#price">PRICING</a>
+                      <li class="nav-item submenu dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
+                        </ul>
+                      </li> 
+                      <li class="nav-item submenu dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                          <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
+                        </ul>
+                        
+                      </li>
+                    </li>
+                  </li>
+                </ul>
+              </div> 
+            </div>
+          </nav> 
+        </div>
+      </header>
+    </section>
+    <section>
+      <div class="text-center m-100">
+        <h2 class="rainbow">Edit <%= resource_name.to_s.humanize %></h2>
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          
+          <div class="field">
+            <%= f.label :name %><br />
+            <%= f.text_field :name, autofocus: true, :class =>"input-style" %>
+          </div>
+
+
+          <div class="field">
+            <%= f.label :phone_number %><br />
+            <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number"  , :class =>"input-style"%>
+          </div>
+
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email" ,:class =>"input-style"%>
+          </div>
+
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+
+          <div class="field">
+            <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+            <%= f.password_field :password, autocomplete: "new-password", :class =>"input-style"%>
+            <% if @minimum_password_length %>
+              <br />
+              <em><%= @minimum_password_length %> characters minimum</em>
+            <% end %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password",:class =>"input-style" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+            <%= f.password_field :current_password, autocomplete: "current-password",:class =>"input-style" %>
+          </div>
+         <div class="d-flex align-item-center justify-content-center pt-2">
+           <div class="actions">
+            <%= f.submit "Update", :class => "btn-all main_btn mr-2  "%>
+          </div>
+        <% end %>
+         <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" },:class => "btn btn-outline-danger mr-2 ", method: :delete %>
+          <%= link_to "Back", :back, :class=>"btn btn-outline-info " %>
+         </div>
+          
+        
+      </div>
+      
+
+    </section>
+  </body>
+</html>
+<style type="text/css">
+  .m-100{
+    margin-top: 110px;
+  }
+  .input-style{
+    width: 50% !important;
+  }
+  .rainbow {
+  background-image: -webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  background-image: gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );
+  color:transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+  .main_btn {
+    padding: 0px 45px;
+    background-image: -webkit-gradient(linear, left top, right top, from(#bc2bff), color-stop(51%, #7249fb), to(#bc2bff));
+    background-image: -webkit-linear-gradient(left, #bc2bff 0%, #7249fb 51%, #bc2bff 100%);
+    background-image: -o-linear-gradient(left, #bc2bff 0%, #7249fb 51%, #bc2bff 100%);
+    background-image: linear-gradient(to right, #bc2bff 0%, #7249fb 51%, #bc2bff 100%);
+    background-size: 200% auto;
+    z-index: 2;
+    display: inline-block;
+    -webkit-transition: all 400ms linear;
+    -o-transition: all 400ms linear;
+    transition: all 400ms linear;
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
+    line-height: 50px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 10px 30px 0px rgba(115, 73, 251, 0.3);
+    box-shadow: 0px 10px 30px 0px rgba(115, 73, 251, 0.3);
+}
+.btn-all {
+    line-height: 3 !important;
+    border-radius: 26px !important;
+    border: none !important;
+}
+</style>

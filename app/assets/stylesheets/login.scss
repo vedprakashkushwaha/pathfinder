@@ -1,0 +1,112 @@
+// Place all the styles related to the login controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.input-style{
+width: 75%;
+border: 1px solid #cac2c2;
+border-radius: 11px;
+height: 40px;
+padding-left: 10px;
+outline: none;
+
+}
+.card{
+border-radius: 22px;
+box-shadow: 0px 0px 10px -1px;
+border: none;
+}
+.btn-all{
+line-height: 3!important;
+border-radius: 26px!important;
+border: none!important;
+}
+.w-33{
+width: 33%;
+}
+.btn-pd{
+padding-top: 0px;
+padding-bottom: 0px;
+}
+.home-card{
+.card-title{
+text-align: left;
+color: blueviolet;
+}
+p{
+text-align: left;
+color: blueviolet!important;
+font-size: 16px!important;
+}
+a{
+float: left;
+}
+button{
+	float: left;
+}
+.btn-primary {
+color: #fff;
+background-color: blueviolet;
+border-color: blueviolet;
+}
+.oop-icon{
+	width: 50%;
+    text-align: center!important;
+}
+}
+.font-16{
+	font-size: 16px;
+}
+.pricing{
+	  .columns {
+  float: left;
+  width: 75%;
+  padding: 8px;
+}
+
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.price .header {
+  background-color: blueviolet;
+  color: white;
+  font-size: 25px;
+}
+
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+.button {
+  background-color: blueviolet;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+}
+}
