@@ -85,7 +85,7 @@ class VideosController < ApplicationController
 
 		def admin
 			if current_user.present?
-				current_user.email == "niraj93500@gmail.com" ? true: current_user.email == "Pathfinderkailashpuri@gmail.com" ? true:false
+				current_user.email == "niraj93500@gmail.com" ? true: current_user.email == "pathfinderkailashpuri@gmail.com" ? true:false
 			else
 				false
 			end
