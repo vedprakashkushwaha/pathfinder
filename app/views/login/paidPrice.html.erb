@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <title>BulkApp</title>
+</head>
+<body data-spy="scroll" data-target="#mainNav" data-offset="70">
+  <section>
+    <header class="header_area navbar_fixed">
+      <div class="main_menu" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand logo_h text-white" href="index.html">Pathfinder.com</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+              <ul class="nav navbar-nav menu_nav ml-auto">
+                <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li> 
+                <%if current_user.present? %>
+                <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class =>"nav-link" %> </li>
+                <%else%>
+                <li class="nav-item">
+                  <%= link_to "Login", new_user_session_path, :class =>"nav-link"  %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "Sign up", new_user_registration_path, :class =>"nav-link"  %>
+                </li>
+                <% end  %>
+              </li>
+            </li>
+          </li>
+        </ul>
+      </div> 
+    </div>
+  </nav> 
+</div>
+</header>
+</section>
+<div style="margin-top: 5%;" class="pricing">
+ <div class="container">
+   <div class="row">
+     <div class="col-md-6">
+      <h2 >Our paid plan</h2>
+      <br>
+      <p class="font-16">* We have a very basic plan for paid membership</p>
+      <div class="columns">
+        <ul class="price">
+          <li class="header">Basic</li>
+          <li class="grey">&#x20b9; 100 / Month</li>
+          <li>Premium tutorial videos access</li>
+          <li>Hand written notes</li>
+          <li>Test series</li>
+          <li>Proper Guidance</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-6">
+    <h2>Payment Process</h2>
+    <p class="font-16">* We are accepting payment through UPI, you can pay via QR code </p>
+    <h2>Steps to get membership</h2>
+    <ol>
+      <li>Scan QR code do payment</li>
+      <li>Fill form with some information</li>
+      <li>Press Send Button</li>
+    </ol>
+    <h4 class="text-center">Payment information Form</h4>
+    <form action="">
+      <div class="row">
+          <label for="">* Note:- You can send your payment information on WhatsApp 9504909078</label>
+        <div class="col-md-6">
+          <input type="text" class="form-control"      id="value1" placeholder="Enter your Name" required="">
+          <input type="text" class="form-control mt-2" id="value2" placeholder="Enter your Registered Email Id">
+          <input type="text" class="form-control mt-2" id="value3" placeholder="Enter your Phone Number">
+          <input type="text" class="form-control mt-2" id="value4" placeholder="Enter transition no or id etc">
+         <!--  <a href="https://wa.me/+919097991704/?text=Hello, I want to know " class="btn btn-primary">submit</a> -->
+           <input type="button" name="Sumbit" class="brn btn-primary btn-sm mt-2" style="margin-left: 38%;" value="Click here" onclick="javascript:sends()"/>
+        </div>
+        <div class="col-md-6 ">
+          <!-- Button trigger modal -->
+          <div class="mt-5 text-center">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+ Scan QR Code
+</button>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">QR code Pathfinder</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= image_tag('Qr.jpeg', style:"width: 50%;
+                            margin-left: 25%; ") %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+      </form>
+   </div>
+ </div>
+</div>
+</div>
+</body>
+</html>
+
+ <script language="javascript">
+                function sends()
+                {
+                        var x = document.getElementById("value1").value+" "
+                        var y = document.getElementById("value2").value
+                        var a = document.getElementById("value3").value+" "
+                        var b = document.getElementById("value4").value
+                        var z = x+y+a+b;
+                         var whatsapp_url = "https://wa.me/+919097991704/?text=Your transaction details" + z;
+                         window.location.href = whatsapp_url;
+                }
+        </script>

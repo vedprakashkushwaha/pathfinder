@@ -72,6 +72,10 @@
             :class => "btn btn-outline-primary mr-2 ", :method => :get %>
           <%= button_to "Show All Videos", videos_showAll_path, :id => "open-contacts-dialog-btn",
             :class => "btn btn-outline-success tip", :method => :get %>
+
+
+            <%= button_to "Grant videos access", admin_grantVideoAccess_path, :id => "open-contacts-dialog-btn",
+            :class => "btn btn-outline-success tip", :method => :get %>
         </div>
       </div>
     </section>

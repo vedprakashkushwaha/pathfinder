@@ -39,24 +39,11 @@
                     </li>
                   <% end  %>
 
-                  <li class="nav-item"><a class="nav-link" href="#video">VIDEO</a>
-                    <li class="nav-item"><a class="nav-link" href="#price">PRICING</a>
-                      <li class="nav-item submenu dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-                        <ul class="dropdown-menu">
-                          <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-                        </ul>
-                      </li> 
-                      <li class="nav-item submenu dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-                        <ul class="dropdown-menu">
-                          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-                          <li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-                        </ul>
-                        
-                      </li>
-                    </li>
-                  </li>
+                  <li class="nav-item">
+                <a href="https://pathfinderofficial.blogspot.com/" class="nav-link "  role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+              </li>
+              <li class="nav-item"><%= link_to "About Us", login_about_path, :class =>"nav-link" %> 
+              </li>
                 </ul>
               </div> 
             </div>
@@ -74,6 +61,7 @@
             <th>Standard</th>
             <th>Text</th>
             <th>Description</th>
+            <th>Paid</th>
             <th>Links</th>
            
             <th colspan="3"> Action</th>
@@ -84,6 +72,7 @@
               <td><%= video.standard %></td>
               <td><%= video.title %></td>
               <td><%= video.description %></td>
+              <td><%= video.paid %></td>
               <td class="rainbow cursur"><%= video.link %></td>
               <td><%= link_to 'Show', videos_showSpecific_path(video) %></td>
               <td><%= link_to 'Edit', edit_video_path(video) %></td>

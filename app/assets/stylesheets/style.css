@@ -418,7 +418,7 @@ button:focus {
 }
 
 .home_banner_area .banner_inner .banner_content .banner_map_img {
-  text-align: right;
+ /* text-align: right;*/
 }
 
 .blog_banner {

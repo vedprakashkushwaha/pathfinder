@@ -1,0 +1,55 @@
+ <div class="bg-gray">
+	<section >
+	    <header class="header_area navbar_fixed">
+	        <div class="main_menu" id="mainNav">
+	            <nav class="navbar navbar-expand-lg navbar-light">
+		            <div class="container">
+		              <!-- Brand and toggle get grouped for better mobile display -->
+		                <a class="navbar-brand logo_h text-white" href="index.html">Pathfinder.com</a>
+		                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			                <span class="icon-bar"></span>
+			                <span class="icon-bar"></span>
+			                <span class="icon-bar"></span>
+		                </button>
+		              <!-- Collect the nav links, forms, and other content for toggling -->
+		                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+			                <ul class="nav navbar-nav menu_nav ml-auto">
+			                    <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li> 
+			                    <%if current_user.present? %>
+			                        <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class =>"nav-link" %>
+			                        </li>
+			                    <%else%>
+				                    <li class="nav-item">
+				                      <%= link_to "Login", new_user_session_path, :class =>"nav-link"  %>
+				                    </li>
+				                    <li class="nav-item">
+				                      <%= link_to "Sign up", new_user_registration_path, :class =>"nav-link"  %>
+				                    </li>
+			                    <% end  %>
+
+			                    <li class="nav-item">
+					                <a href="https://pathfinderofficial.blogspot.com/" class="nav-link "  role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+					            </li>
+					            <li class="nav-item"><%= link_to "About Us", login_about_path, :class =>"nav-link" %> 
+					            </li>
+			                </ul>
+		                </div> 
+		            </div>
+	            </nav> 
+	        </div>
+	    </header>
+	</section>
+	<section class="mt-10 ">
+		<form action="/admin/updateGrantVideoAccess" method=GET>
+		    <div class="nav-link text-center" >
+		        <label>Please Enter Your Email Id: </label>
+		        <div class="">
+		            <input type="email" name="email" placeholder="Enter email"  class=" w-25 form-control d-inline" >
+		        </div>
+		        <div class="mt-1">
+		            <input type="submit" name="" value="Select" class="btn btn-outline-primary">
+		        </div>
+		    </div>
+		</form>
+	</section>
+</div>

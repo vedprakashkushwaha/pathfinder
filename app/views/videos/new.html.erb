@@ -38,22 +38,11 @@
 							</li>
 							<% end  %>
 
-							<li class="nav-item"><a class="nav-link" href="#video">VIDEO</a>
-								<li class="nav-item"><a class="nav-link" href="#price">PRICING</a>
-									<li class="nav-item submenu dropdown">
-										<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
-										<ul class="dropdown-menu">
-											<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
-										</ul>
-									</li> 
-									<li class="nav-item submenu dropdown">
-										<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
-										<ul class="dropdown-menu">
-											<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-											<li class="nav-item"><a class="nav-link" href="single-blog.html">Blog Details</a></li>
-										</ul>
-										
-									</li>
+							<li class="nav-item">
+				                <a href="https://pathfinderofficial.blogspot.com/" class="nav-link "  role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+				            </li>
+				            <li class="nav-item"><%= link_to "About Us", login_about_path, :class =>"nav-link" %> 
+				            </li>
 								</ul>
 							</div> 
 						</div>
@@ -98,6 +87,15 @@
 							<option value="10">class 10</option>
 							<option value="11">class 11</option>
 							<option value="12">class 12</option>
+						</select>
+
+						<br/>
+						<br/>
+						<select name="[video][paid]" class="input-style w-33">
+							<option value=false>Select Video Type</option>
+							<option value=true>Paid</option>
+							<option value=false>Free</option>
+							
 						</select>
 
 

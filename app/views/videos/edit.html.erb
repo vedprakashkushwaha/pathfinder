@@ -1,6 +1,5 @@
 <h1>edit video</h1>
 
-
 <div class="post-form">
 	<%= form_for(@video, url: video_path, method: :patch ) do |form| %>
 	<%#= form_with scope: :article, local: true do |form| %>
@@ -19,6 +18,12 @@
 	    <%= form.label :description %><br>
 	    <%= form.text_area :description %>
 	</p>
+
+	<select name="[video][paid]" class="input-style w-33">
+		<option value=false>Select Video Type</option>
+		<option value=true>Paid</option>
+		<option value=false>Free</option>
+	</select>
 
 	<p>
 	    <%= form.label :link %><br>

@@ -24,19 +24,24 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
               <ul class="nav navbar-nav menu_nav ml-auto">
-                <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li> 
+                <li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
                 <%if current_user.present? %>
-                                         <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class =>"nav-link" %> </li>
+                   <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class =>"nav-link" %> </li>
 
-                                         <%else%>
+                   <%else%>
 
-                                         <li class="nav-item">
-                                          <%= link_to "Login", new_user_session_path, :class =>"nav-link"  %>
-                                         </li>
-                                         <li class="nav-item">
-                                          <%= link_to "Sign up", new_user_registration_path, :class =>"nav-link"  %>
-                                         </li>
-                                           <% end  %>
+                   <li class="nav-item">
+                    <%= link_to "Login", new_user_session_path, :class =>"nav-link"  %>
+                   </li>
+                   <li class="nav-item">
+                    <%= link_to "Sign up", new_user_registration_path, :class =>"nav-link"  %>
+                   </li>
+                <% end  %>
+                <li class="nav-item">
+                <a href="https://pathfinderofficial.blogspot.com/" class="nav-link "  role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+              </li>
+              <li class="nav-item"><%= link_to "About Us", login_about_path, :class =>"nav-link" %> 
+              </li>
                                          
                 </li>
               </ul>
