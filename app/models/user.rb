@@ -7,7 +7,13 @@ class User < ActiveRecord::Base
   def updateRoleId
     userRoleId=Role.find_by(name:"user")
     self.role_id=userRoleId.id
-    self.paid_videos_validity = Date.today - 1
+    if self.paid_videos_validity.present?
+      self.paid_videos_validity = Date.today + 3650
+    else
+      self.paid_videos_validity = Date.today - 1
+    end
+
+
     self.save
   end
   

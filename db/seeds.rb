@@ -9,7 +9,7 @@
 role = Role.create([{name:'admin'},{name:'superadmin'},{name:'user'}])
 adminRole=Role.find_by(name:"admin")
 superAdminRole=Role.find_by(name:"superadmin")
-admin = adminRole.users.create([{email:"niraj93500@gmail.com",name:"admin",password:"1234567",phone_number:"6204907619"}])
-superAdmin = superAdminRole.users.create([{email:"pathfinderkailashpuri@gmail.com",name:"superadmin",password:"1234567",phone_number:"9097991704"}])
+admin = adminRole.users.create([{email:"niraj93500@gmail.com",name:"admin",password:"1234567",phone_number:"6204907619",paid_videos_validity:Date.today+3650}])
+superAdmin = superAdminRole.users.create([{email:"pathfinderkailashpuri@gmail.com",name:"superadmin",password:"1234567",phone_number:"9097991704",paid_videos_validity:Date.today+3650}])
 
 
