@@ -23,7 +23,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
               <ul class="nav navbar-nav menu_nav ml-auto">
-                <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li> 
+                <li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
                 <%if current_user.present? %>
                 <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class =>"nav-link" %> </li>
                 <%else%>
@@ -123,12 +123,19 @@
  <script language="javascript">
                 function sends()
                 {
+                        var n = "Name:-";
+                        var e = "Emaid:-";
+                        var p = "Phone:-";
+                        var t = "Transaction Id";
                         var x = document.getElementById("value1").value+" "
-                        var y = document.getElementById("value2").value
+                        var y = document.getElementById("value2").value+" "
                         var a = document.getElementById("value3").value+" "
-                        var b = document.getElementById("value4").value
-                        var z = x+y+a+b;
-                         var whatsapp_url = "https://wa.me/+919097991704/?text=Your transaction details" + z;
+                        var b = document.getElementById("value4").value+" "
+                         var whatsapp_url = "https://wa.me/+919097991704/?text=Your transaction details :-"
+                         +n+x+"\n"
+                         +e+y 
+                         +p+a
+                         +t+b;
                          window.location.href = whatsapp_url;
                 }
         </script>

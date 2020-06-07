@@ -14,7 +14,7 @@
 		              <!-- Collect the nav links, forms, and other content for toggling -->
 		                <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 			                <ul class="nav navbar-nav menu_nav ml-auto">
-			                    <li class="nav-item active"><a class="nav-link" href="#home">Home</a></li> 
+			                    <li class="nav-item active"><a class="nav-link" href="/">Home</a></li> 
 			                    <%if current_user.present? %>
 			                        <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class =>"nav-link" %>
 			                        </li>
@@ -47,7 +47,7 @@
 		            <input type="email" name="email" placeholder="Enter email"  class=" w-25 form-control d-inline" >
 		        </div>
 		        <div class="mt-1">
-		            <input type="submit" name="" value="Select" class="btn btn-outline-primary">
+		            <input type="submit" name="" value="Submit" class="btn btn-outline-primary">
 		        </div>
 		    </div>
 		</form>
